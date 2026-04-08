@@ -5,202 +5,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>林旻燕</title>
     <style>
-        /* 1. 設定色票變數 (Pantone 冷色系) */
         :root {
-            --very-peri: #6667AB;   /* 長春花藍 - 核心文字 */
-            --orchid-bloom: #C6AACC; /* 蘭花紫 - 裝飾色 */
-            --spun-sugar: #B3E0E9;   /* 糖粉藍 - 極淺背景 */
-            --clear-sky: #A1C3DE;    /* 淨空藍 - 標籤色 */
-            --text-gray: #5A5B5E;    /* 柔和深灰 */
+            --very-peri: #4A4B96;   /* 深長春花藍 */
+            --orchid-bloom: #9D7BA8; /* 深蘭花紫 */
+            --clear-sky: #5F8BB0;    /* 深淨空藍 */
+            --pure-black: #1A1A1A;   /* 近純黑字體，確保清晰 */
+            --content-gray: #333333; /* 內容深灰色 */
         }
 
         body { 
-            font-family: "Noto Sans TC", sans-serif; 
-            line-height: 1.8; 
-            color: var(--text-gray); 
+            font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif; 
+            line-height: 2; 
+            color: var(--pure-black); 
             max-width: 850px; 
             margin: 0 auto; 
-            padding: 60px 20px; 
-            /* 使用 Spun Sugar 進行超淡漸層 */
+            padding: 50px 20px; 
             background-color: #FFFFFF;
-            text-align: center;           
+            text-align: center;
         }
 
-        /* 2. 履歷主體：清透白卡片 */
+        /* 強化邊框與陰影，讓界線明確 */
         .resume-container {
             background-color: #ffffff;
-            padding: 60px 50px;
-            border-radius: 16px;
-            box-shadow: 0 15px 35px rgba(102, 103, 171, 0.05); /* 帶有 Very Peri 色相的極淡陰影 */
-            border: 1px solid #f0f2f5;
+            padding: 50px 60px;
+            border-radius: 12px;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.12); 
+            border: 2px solid #E1E4E8;
             position: relative;
         }
         
-        /* 3. 名字：使用 Very Peri */
-        header { margin-bottom: 50px; }
+        /* 名字 */
+        header { margin-bottom: 40px; }
         h1 { 
             color: var(--very-peri); 
             margin: 0; 
-            font-size: 2.8em; 
+            font-size: 3em; 
             letter-spacing: 12px; 
-            font-weight: 700;
-            text-indent: 12px;
+            font-weight: 900;
         }
         
-        /* 4. 區塊標題：冷色調排版 */
+        /* 標題：加粗加深 */
         h2 { 
-            font-size: 1.3em; 
+            font-size: 1.6em; 
             display: inline-block;
-            padding: 0 15px 10px;
-            margin-top: 45px; 
+            padding: 0 20px 8px;
+            margin-top: 40px; 
             margin-bottom: 25px; 
-            letter-spacing: 5px;
+            letter-spacing: 6px;
             color: var(--very-peri);
-            border-bottom: 2px solid var(--orchid-bloom); /* 蘭花紫裝飾線 */
-            opacity: 0.8;
+            border-bottom: 4px solid var(--orchid-bloom); 
+            font-weight: 900;
         }
         
         .content { 
             margin-bottom: 30px; 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            font-size: 1.15em;
+            font-weight: 500;
+            color: var(--content-gray);
         }
         
-        /* 5. 專題標題：低飽和藍紫強調 */
+        /* 專題標題：絕對黑色 */
         .project-title { 
-            font-weight: bold; 
-            color: #333; 
-            font-size: 1.3em; 
-            margin-bottom: 12px;
+            font-weight: 900; 
+            color: #000000; 
+            font-size: 1.5em; 
+            margin-bottom: 10px;
         }
 
         .project-desc {
-            max-width: 650px;
-            margin: 0 auto;
-            color: #70757a;
+            max-width: 680px;
+            margin: 15px auto;
+            color: #222222;
             text-align: justify;
-            font-size: 0.95em;
+            font-size: 1.05em;
+            line-height: 1.9;
         }
         
-        /* 6. 標籤設計：淨空藍 (Clear Sky) 低飽和度 */
+        /* 標籤：背景加深，字體改為深色 */
         .tag-box { 
             margin-top: 25px; 
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 15px;
         }
         
         .tag { 
-            background: #f1f6fa; /* 極淺藍底 */
-            color: var(--clear-sky); /* 淨空藍字 */
-            padding: 5px 20px; 
-            border-radius: 50px; 
-            font-size: 0.85em; 
-            font-weight: 600;
-            border: 1px solid #e1eaf2;
-            transition: all 0.3s ease;
+            background: #E8F0F7; /* 淺藍背景 */
+            color: #2C4A63;      /* 深藍文字，確保極高對比度 */
+            padding: 8px 25px; 
+            border-radius: 8px; 
+            font-size: 1em; 
+            font-weight: 900;    /* 標籤字體加到最粗 */
+            border: 2px solid var(--clear-sky);
         }
 
-        .tag:hover {
-            background: var(--clear-sky);
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        /* 7. 聯絡資訊：清涼糖粉藍區塊 */
+        /* 聯絡資訊 */
         footer {
-            margin-top: 60px;
+            margin-top: 50px;
             padding: 40px;
-            background-color: #fafdff; /* Spun Sugar 的極淺色 */
-            color: var(--very-peri);
+            background-color: #F0F4F8; 
             border-radius: 12px;
-            border: 1px dashed var(--spun-sugar);
+            border: 2px solid var(--very-peri);
         }
 
         .footer-title { 
-            font-weight: bold; 
-            font-size: 1.1em; 
-            margin-bottom: 12px; 
-            letter-spacing: 2px;
+            font-weight: 900; 
+            font-size: 1.3em; 
+            margin-bottom: 15px; 
+            color: var(--very-peri);
         }
 
         .footer-text { 
-            font-size: 1em;
-            color: var(--text-gray);
-            line-height: 2;
+            font-size: 1.2em;
+            color: #000000;
+            font-weight: 700;
         }
 
-        strong { color: #333; }
+        strong { color: #000; font-weight: 900; }
     </style>
 </head>
 <body>
 
     <div class="resume-container">
         <header>
-            <h1>林旻燕</h1>
-        </header>
-
-        <section>
-            <h2>EDUCATION</h2>
-            <div class="content">
-                目前就讀 <strong>國立勤益科技大學</strong><br>智慧自動化工程系
-            </div>
-        </section>
-
-        <section>
-            <h2>PROJECTS</h2>
-            <div class="content">
-                <div class="project-title">智慧分身自走車</div>
-                <div style="color: var(--orchid-bloom); font-size: 0.85em; margin-bottom: 12px; font-weight: 500;">2025.09 — PRESENT</div>
-                <div class="project-desc">
-                    研發具備遠端通訊功能之自走車，整合影像識別與感測器開發自動避障功能。致力於協助下肢行動不便者能以直覺且輕鬆的方式操控，實現即時遠端互動。
-                </div>
-                <div class="tag-box">
-                    <span class="tag">感測器整合</span>
-                    <span class="tag">自走車開發</span>
-                    <span class="tag">Arduino</span>
-                    <span class="tag">Python</span>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>CERTIFICATIONS</h2>
-            <div class="content">
-                電腦軟體應用 — 乙級<br>
-                Certified SolidWorks Professional (CSWP)
-            </div>
-        </section>
-
-        <section>
-            <h2>SKILLS</h2>
-            <div class="content">
-                <div class="tag-box">
-                    <span class="tag">Python</span>
-                    <span class="tag">機器學習</span>
-                    <span class="tag">SolidWorks</span>
-                    <span class="tag">Arduino</span>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>LANGUAGES</h2>
-            <div class="content">
-                English — TOEIC 690 / CESPT 226
-            </div>
-        </section>
-
-        <footer>
-            <div class="footer-title">CONTACT INFO</div>
-            <div class="footer-text">
-                Email: asf12355555@gmail.com <br>
-                Phone: 0910-890773
-            </div>
-        </footer>
-    </div>
-
-</body>
-</html>
+            <h1>林
