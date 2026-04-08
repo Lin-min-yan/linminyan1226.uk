@@ -3,136 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>林旻燕 | 極簡莫蘭迪履歷</title>
+    <title>林旻燕 | PANTONE 質感履歷</title>
     <style>
-        /* 1. 全域設定：極低飽和度背景 */
+        /* 1. 定義 PANTONE 色票色彩 */
+        :root {
+            --very-peri: #6667AB;    /* 長春花藍 - 核心技術 */
+            --orchid-bloom: #C5A9D0; /* 蘭花紫 - 專題裝飾 */
+            --spun-sugar: #B7E3EC;   /* 砂糖藍 - 清新背景 */
+            --clear-sky: #9BB7D4;    /* 淨空藍 - 工程硬體 */
+            --text-main: #1A1A1A;    /* 近純黑字體 */
+            --text-sub: #444444;     /* 深灰內容字 */
+        }
+
         body { 
             font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif; 
-            line-height: 1.8; 
-            color: #4f4f4f; /* 碳灰色文字，極其柔和 */
+            line-height: 2; 
+            color: var(--text-main); 
             max-width: 850px; 
             margin: 0 auto; 
-            padding: 60px 20px; 
-            background: linear-gradient(135deg, #f5f5f5 0%, #e8ecef 100%); 
+            padding: 50px 20px; 
+            background-color: #FFFFFF; /* 純白背景確保對比度 */
             text-align: center;
         }
 
-        /* 2. 履歷卡片：冷淡風白淨質感 */
+        /* 履歷容器 */
         .resume-container {
             background-color: #ffffff;
-            padding: 60px 50px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
-            border: 1px solid #ececec;
+            padding: 50px 60px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08); 
+            border: 1px solid #E1E4E8;
             position: relative;
+            overflow: hidden;
         }
-        
-        /* 3. 頂部細飾條：低彩度漸層 */
+
+        /* 頂部裝飾條 */
         .resume-container::before {
             content: "";
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, #c9d6df 0%, #e2e2e2 50%, #d1c4bc 100%);
-        }
-
-        /* 4. 名字 */
-        header { margin-bottom: 55px; }
-        h1 { 
-            color: #333333; 
-            margin: 0; 
-            font-size: 2.6em; 
-            letter-spacing: 12px; 
-            font-weight: 700;
+            height: 6px;
+            background: linear-gradient(90deg, var(--very-peri), var(--orchid-bloom), var(--spun-sugar));
         }
         
-        /* 5. 區塊標題：煙灰藍底線 */
+        header { margin-bottom: 40px; }
+        h1 { 
+            color: var(--very-peri); 
+            margin: 0; 
+            font-size: 3em; 
+            letter-spacing: 12px; 
+            font-weight: 900;
+        }
+        
         h2 { 
-            font-size: 1.3em; 
+            font-size: 1.5em; 
             display: inline-block;
-            padding: 0 10px 8px;
-            margin-top: 45px; 
+            padding: 0 15px 8px;
+            margin-top: 40px; 
             margin-bottom: 25px; 
-            letter-spacing: 4px;
-            color: #6c757d;
-            border-bottom: 1.5px solid #dcdde1; 
+            letter-spacing: 5px;
+            color: var(--very-peri);
+            border-bottom: 3px solid var(--orchid-bloom); 
+            font-weight: 800;
         }
         
         .content { 
-            margin-bottom: 30px; 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            margin-bottom: 25px; 
+            font-size: 1.1em;
+            color: var(--text-sub);
         }
         
-        /* 6. 專題標題：純黑強調 */
         .project-title { 
-            font-weight: bold; 
-            color: #000000; 
-            font-size: 1.25em; 
-            margin-bottom: 10px;
+            font-weight: 900; 
+            color: #000; 
+            font-size: 1.4em; 
+            margin-bottom: 8px;
         }
 
         .project-desc {
-            max-width: 620px;
-            margin: 0 auto;
-            color: #7a7a7a;
+            max-width: 650px;
+            margin: 15px auto;
+            color: var(--text-sub);
             text-align: justify;
-            font-size: 0.95em;
+            line-height: 1.8;
         }
         
-        /* 7. 極低飽和標籤：色彩如霧般淡雅 */
+        /* 標籤設計：對應圖片色彩 */
         .tag-box { 
-            margin-top: 25px; 
+            margin-top: 20px; 
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 12px;
         }
         
         .tag { 
-            padding: 4px 16px; 
-            border-radius: 4px; /* 方正圓角，看起來更洗鍊 */
-            font-size: 0.85em; 
-            font-weight: 500;
-            letter-spacing: 0.5px;
+            padding: 6px 20px; 
+            border-radius: 50px; 
+            font-size: 0.95em; 
+            font-weight: 800;
+            letter-spacing: 1px;
+            transition: 0.3s;
         }
 
-        /* 莫蘭迪灰調色彩分配 */
-        .tag-gray-blue  { background: #f0f4f7; color: #7b8ea0; border: 1px solid #e1e8ed; } /* 煙灰藍 */
-        .tag-gray-green { background: #f1f5f0; color: #8a9a8a; border: 1px solid #e6ede5; } /* 草灰綠 */
-        .tag-gray-tan   { background: #f7f3f0; color: #a3938a; border: 1px solid #ede6e1; } /* 燕麥色 */
-        .tag-gray-lilac { background: #f4f0f7; color: #9a8a9a; border: 1px solid #eee5ed; } /* 煙灰紫 */
+        /* 顏色類別 */
+        .tag-vp { background-color: #E8E9F5; color: var(--very-peri); }   /* Very Peri */
+        .tag-ob { background-color: #F4EEF7; color: var(--orchid-bloom); } /* Orchid Bloom */
+        .tag-ss { background-color: #F0F9FB; color: #4A8A96; }            /* Spun Sugar (加深字色) */
+        .tag-cs { background-color: #EDF2F7; color: var(--clear-sky); }    /* Clear Sky */
 
         .tag:hover {
-            background-color: #ffffff;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        /* 8. 聯絡方式：極簡燕麥色區塊 */
         footer {
-            margin-top: 60px;
+            margin-top: 50px;
             padding: 35px;
-            background-color: #fafafa;
-            color: #888888;
-            border-radius: 8px;
-            border: 1px solid #eeeeee;
-        }
-        .footer-title { 
-            font-weight: bold; 
-            font-size: 1em; 
-            margin-bottom: 12px; 
-            color: #666666;
-            letter-spacing: 2px;
-        }
-        .footer-text { 
-            font-size: 1em;
-            line-height: 1.8;
+            background-color: #F8F9FB; 
+            border-radius: 12px;
+            border: 1px solid #E1E4E8;
         }
 
-        strong { color: #444444; }
+        .footer-title { 
+            font-weight: 900; 
+            font-size: 1.2em; 
+            margin-bottom: 12px; 
+            color: var(--very-peri);
+        }
+
+        .footer-text { 
+            font-size: 1.1em;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        strong { color: #000; font-weight: 800; }
     </style>
 </head>
 <body>
@@ -143,61 +151,61 @@
         </header>
 
         <section>
-            <h2>EDUCATION</h2>
+            <h2>學歷教育</h2>
             <div class="content">
                 目前就讀 <strong>國立勤益科技大學</strong><br>智慧自動化工程系
             </div>
         </section>
 
         <section>
-            <h2>PROJECT</h2>
+            <h2>專題經歷</h2>
             <div class="content">
                 <div class="project-title">智慧分身自走車</div>
-                <div style="color: #bcbcbc; font-size: 0.85em; margin-bottom: 12px;">2025.09 ~ PRESENT</div>
+                <div style="color: var(--orchid-bloom); font-weight: 800; font-size: 1em; margin-bottom: 10px;">2025.09 — PRESENT</div>
                 <div class="project-desc">
-                    研發具備遠端通訊功能之自走車，整合影像識別與感測器開發自動避障功能。致力於協助下肢行動不便者能以直覺且輕鬆的方式操控，實現即時遠端互動。
+                    研發具備遠端通訊功能之自走車，整合影像識別與感測器開發自動避障功能。致力於協助下肢行動不便者操控，實現即時遠端互動。
                 </div>
                 <div class="tag-box">
-                    <span class="tag tag-gray-blue">感測器整合</span>
-                    <span class="tag tag-gray-blue">自走車開發</span>
-                    <span class="tag tag-gray-green">Arduino</span>
-                    <span class="tag tag-gray-lilac">Python</span>
+                    <span class="tag tag-cs">感測器整合</span>
+                    <span class="tag tag-cs">自走車開發</span>
+                    <span class="tag tag-ss">Arduino</span>
+                    <span class="tag tag-vp">Python</span>
                 </div>
             </div>
         </section>
 
         <section>
-            <h2>CERTIFICATIONS</h2>
+            <h2>專業證照</h2>
             <div class="content">
-                電腦軟體應用 - 乙級<br>
+                電腦軟體應用 — 乙級<br>
                 Certified SolidWorks Professional (CSWP)
             </div>
         </section>
 
         <section>
-            <h2>SKILLS</h2>
+            <h2>專業技能</h2>
             <div class="content">
                 <div class="tag-box">
-                    <span class="tag tag-gray-lilac">Python</span>
-                    <span class="tag tag-gray-blue">機器學習</span>
-                    <span class="tag tag-gray-blue">SolidWorks</span>
-                    <span class="tag tag-gray-tan">Arduino</span>
+                    <span class="tag tag-vp">Python</span>
+                    <span class="tag tag-ob">機器學習</span>
+                    <span class="tag tag-cs">SolidWorks</span>
+                    <span class="tag tag-ss">Arduino</span>
                 </div>
             </div>
         </section>
 
         <section>
-            <h2>LANGUAGES</h2>
+            <h2>語言能力</h2>
             <div class="content">
                 English — TOEIC 690 / CESPT 226
             </div>
         </section>
 
         <footer>
-            <div class="footer-title">CONTACT</div>
+            <div class="footer-title">聯絡資訊</div>
             <div class="footer-text">
                 Email: asf12355555@gmail.com <br>
-                Phone: 0910-890773
+                電話: 0910-890773
             </div>
         </footer>
     </div>
