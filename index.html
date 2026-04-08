@@ -5,98 +5,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>林旻燕 | 個人履歷</title>
     <style>
-        /* 1. 背景改為淺灰藍色 */
+        /* 1. 背景改為更具質感的淡灰藍色 */
         body { 
-            font-family: "Microsoft JhengHei", Helvetica, sans-serif; 
-            line-height: 1.8; 
-            color: #333; 
-            max-width: 900px; 
+            font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif; 
+            line-height: 2; 
+            color: #444; 
+            max-width: 800px; 
             margin: 0 auto; 
-            padding: 40px 20px; 
-            background-color: #f4f7f9; 
+            padding: 60px 20px; 
+            background-color: #f0f4f8; 
+            text-align: center; /* 全域字體置中 */
         }
 
-        /* 2. 履歷卡片主體 */
+        /* 2. 履歷卡片主體：增加精美邊框與柔和陰影 */
         .resume-container {
             background-color: #ffffff;
-            padding: 45px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid #e1e8ed;
         }
         
         /* 3. 頂部名字 */
         header { 
-            margin-bottom: 40px; 
+            margin-bottom: 50px; 
         }
         h1 { 
             color: #2c3e50; 
             margin: 0; 
-            font-size: 2.5em; 
-            letter-spacing: 3px; 
-            font-weight: bold;
+            font-size: 2.8em; 
+            letter-spacing: 8px; 
+            font-weight: 900;
         }
         
-        /* 4. 側邊粗線條標題 */
+        /* 4. 置中式標題設計 */
         h2 { 
             color: #2c3e50; 
-            font-size: 1.4em; 
-            border-left: 6px solid #3498db; 
-            padding-left: 15px; 
-            margin-top: 35px; 
-            margin-bottom: 18px; 
-            background-color: #f8f9fa;
-            padding-top: 8px;
-            padding-bottom: 8px;
+            font-size: 1.5em; 
+            display: inline-block;
+            padding: 5px 20px;
+            margin-top: 40px; 
+            margin-bottom: 25px; 
+            border-bottom: 3px solid #3498db; /* 改為底線裝飾 */
+            letter-spacing: 2px;
         }
         
         .content { 
-            padding-left: 20px; 
-            margin-bottom: 20px; 
+            margin-bottom: 30px; 
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* 內容物置中 */
         }
         
-        /* 5. 專題標題：純黑色 */
+        /* 5. 專題標題：黑色加粗 */
         .project-title { 
             font-weight: bold; 
             color: #000000; 
-            font-size: 1.2em; 
-            margin-bottom: 5px;
-        }
-        
-        /* 6. 標籤樣式：改為藍色底 */
-        .tag-box { margin-top: 12px; }
-        .tag { 
-            display: inline-block; 
-            background: #d6eaf8; /* 淺藍色背景 */
-            color: #2471a3;    /* 深藍色文字 */
-            padding: 4px 16px; 
-            border-radius: 20px; 
-            font-size: 0.85em; 
-            margin-right: 8px; 
-            margin-bottom: 8px;
-            border: 1px solid #aed6f1; 
-            font-weight: bold; 
+            font-size: 1.3em; 
+            margin-bottom: 10px;
         }
 
-        /* 7. 聯絡方式：改為淺色底區塊 */
+        .project-desc {
+            max-width: 600px;
+            margin: 0 auto;
+            color: #666;
+        }
+        
+        /* 6. 標籤樣式：藍色圓角底框 */
+        .tag-box { 
+            margin-top: 20px; 
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .tag { 
+            background: #e1f5fe; /* 淺藍色背景 */
+            color: #0288d1;    /* 深藍色文字 */
+            padding: 5px 18px; 
+            border-radius: 50px; 
+            font-size: 0.9em; 
+            border: 1px solid #b3e5fc; 
+            font-weight: 600; 
+            transition: 0.3s;
+        }
+        .tag:hover {
+            background: #0288d1;
+            color: #ffffff;
+        }
+
+        /* 7. 聯絡方式：淺色優雅區塊 */
         footer {
-            margin-top: 50px;
-            padding: 30px;
-            background-color: #eaf2f8; /* 淺鋼鐵藍底色 */
+            margin-top: 60px;
+            padding: 40px;
+            background-color: #f8fbfe; 
             color: #2c3e50;
-            border-radius: 12px;
-            text-align: center;
-            border: 1px solid #d4e6f1;
+            border-radius: 15px;
+            border: 1px dashed #d4e6f1;
         }
         .footer-title { 
             font-weight: bold; 
-            font-size: 1.1em; 
-            margin-bottom: 8px; 
+            font-size: 1.2em; 
+            margin-bottom: 15px; 
             color: #2980b9; 
-            letter-spacing: 1px;
+            letter-spacing: 2px;
         }
         .footer-text { 
-            font-size: 1em; 
-            line-height: 1.8;
+            font-size: 1.1em;
+            letter-spacing: 0.5px;
         }
 
         strong { color: #2c3e50; }
@@ -112,7 +128,7 @@
         <section>
             <h2>學歷</h2>
             <div class="content">
-                目前就讀 <strong>國立勤益科技大學</strong> - 智慧自動化工程系
+                目前就讀 <strong>國立勤益科技大學</strong><br>智慧自動化工程系
             </div>
         </section>
 
@@ -120,8 +136,10 @@
             <h2>專題</h2>
             <div class="content">
                 <div class="project-title">智慧分身自走車</div>
-                <div><strong>時間：</strong> 2025.09 ~ 現今</div>
-                <div><strong>內容：</strong> 研發具備遠端通訊功能之自走車，並結合影像及感測器開發自動避障功能，期望讓下肢不便行動的人能夠以輕鬆操作自走車，即時透過自走車進行遠端溝通。</div>
+                <div style="color: #95a5a6; font-size: 0.9em; margin-bottom: 10px;">2025.09 ~ 現今</div>
+                <div class="project-desc">
+                    研發具備遠端通訊功能之自走車，並結合影像及感測器開發自動避障功能，期望讓下肢不便行動的人能夠以輕鬆操作自走車，即時透過自走車進行遠端溝通。
+                </div>
                 <div class="tag-box">
                     <span class="tag">感測器</span>
                     <span class="tag">自走車</span>
@@ -142,10 +160,12 @@
         <section>
             <h2>專業技能</h2>
             <div class="content">
-                <span class="tag">Python</span>
-                <span class="tag">機器學習</span>
-                <span class="tag">SolidWorks</span>
-                <span class="tag">Arduino</span>
+                <div class="tag-box">
+                    <span class="tag">Python</span>
+                    <span class="tag">機器學習</span>
+                    <span class="tag">SolidWorks</span>
+                    <span class="tag">Arduino</span>
+                </div>
             </div>
         </section>
 
@@ -166,8 +186,8 @@
         <footer>
             <div class="footer-title">聯絡方式</div>
             <div class="footer-text">
-                Email: asf12355555@gmail.com <br>
-                電話: 0910-890773
+                📧 Email: asf12355555@gmail.com <br>
+                📱 電話: 0910-890773
             </div>
         </footer>
     </div>
