@@ -3,9 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>林旻燕 | Resume</title>
+    <title>林旻燕 | 個人履歷</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700;900&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
-        /* 基礎設定 */
+        /* --- 核心定義：配色與基礎設定 --- */
+        :root {
+            --bg-body: #f1f4f8;        /* 整體淺藍灰背景 */
+            --bg-card: #ffffff;        /* 白色主卡片背景 */
+            --text-main: #2c3e50;      /* 深藍灰主文字 */
+            --text-muted: #7f8c8d;     /* 淺灰文字 */
+            --accent-main: #3498db;    /* 核心強調藍 */
+            --accent-dark: #2980b9;    /* 深強調藍 */
+            --border-color: #e1e8ed;   /* 精細邊框色 */
+            --tag-bg: #e1f5fe;         /* 淺藍標籤背景 */
+            --shadow-card: 0 10px 30px rgba(0,0,0,0.05); /* 柔和擴散陰影 */
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -14,205 +29,268 @@
 
         body { 
             font-family: 'Noto Sans TC', sans-serif; 
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            min-height: 100vh;
+            background-color: var(--bg-body); 
+            color: var(--text-main);
+            padding: 60px 20px;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 50px 20px;
-            color: #2d3436;
+            min-height: 100vh;
+            line-height: 1.8;
         }
 
-        /* 履歷容器 */
-        .wrapper {
-            background: rgba(255, 255, 255, 0.95);
+        /* --- 履歷卡片主體 --- */
+        .resume-paper {
+            background-color: var(--bg-card);
             width: 100%;
             max-width: 850px;
-            border-radius: 30px;
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-            text-align: center;
-            padding-bottom: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border-color);
+            overflow: hidden; /* 確保內容不會超出圓角 */
+            position: relative;
         }
 
         /* 頂部裝飾條 */
-        .top-bar {
+        .resume-paper::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
             height: 10px;
-            background: linear-gradient(to right, #74b9ff, #0984e3);
+            background: linear-gradient(90deg, #3498db 0%, #0396ff 100%);
         }
 
-        /* 標題區 */
-        header {
-            padding: 60px 20px 40px;
+        /* --- 頂部名字與資訊 --- */
+        header { 
+            padding: 70px 60px 30px;
+            border-bottom: 1px solid var(--border-color);
         }
-        h1 {
-            font-size: 3rem;
-            letter-spacing: 12px;
-            font-weight: 700;
-            color: #0984e3;
-            margin-bottom: 10px;
+        h1 { 
+            font-size: 3em; 
+            color: var(--text-main);
+            letter-spacing: 12px; 
+            font-weight: 900;
             text-indent: 12px; /* 補償字母間距讓文字真正置中 */
+            text-align: center;
         }
         .subtitle {
-            color: #636e72;
-            font-size: 1.1rem;
+            text-align: center;
+            color: var(--text-muted);
             letter-spacing: 2px;
-        }
-
-        /* 內容區塊 */
-        section {
-            padding: 0 50px;
-            margin-bottom: 40px;
-        }
-
-        h2 {
-            font-size: 1.2rem;
-            color: #000;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            margin-bottom: 20px;
-            position: relative;
-            display: inline-block;
-        }
-        h2::after {
-            content: "";
-            display: block;
-            width: 30px;
-            height: 2px;
-            background: #0984e3;
-            margin: 8px auto 0;
-        }
-
-        .info-text {
-            line-height: 2;
-            font-size: 1.1rem;
-        }
-
-        /* 專題區塊 */
-        .project-card {
-            background: #fdfdfd;
-            border: 1px solid #f1f2f6;
-            padding: 30px;
-            border-radius: 20px;
             margin-top: 10px;
         }
-        .project-name {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: #000000;
+
+        /* --- 主內容區：雙欄排版 (彈性佈局) --- */
+        main {
+            display: flex;
+            padding: 40px;
+        }
+
+        /* 左側欄：大標題 */
+        .sidebar-left {
+            width: 200px;
+            border-right: 1px solid var(--border-color);
+            padding-right: 20px;
+        }
+        h2 { 
+            color: var(--text-main); 
+            font-size: 1.1em; 
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 50px; 
+            text-align: right;
+            padding-right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            font-weight: 700;
+        }
+        h2 i {
+            margin-right: 12px;
+            color: var(--accent-main);
+            font-size: 0.9em;
+        }
+
+        /* 右側欄：詳細內容 */
+        .details-right {
+            flex: 1;
+            padding-left: 50px;
+        }
+
+        .section-content {
+            margin-bottom: 50px;
+        }
+
+        .info-block {
+            margin-bottom: 25px;
+        }
+
+        .highlight-text {
+            color: var(--text-main);
+            font-weight: 700;
+            font-size: 1.1em;
+        }
+
+        /* --- 專題卡片設計 --- */
+        .project-card {
+            background-color: #fdfdfd;
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--accent-main); /* 左側強調線 */
+            padding: 30px;
+            border-radius: 12px;
+            transition: 0.3s ease;
+        }
+        .project-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transform: translateY(-3px);
+        }
+        .project-title { 
+            font-weight: bold; 
+            color: var(--text-main); 
+            font-size: 1.25em; 
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .project-time {
+            font-weight: 400;
+            color: var(--text-muted);
+            font-size: 0.75em;
+        }
+        .project-desc {
+            color: var(--text-muted);
+            font-size: 0.95em;
             margin-bottom: 15px;
         }
-        .project-detail {
-            color: #636e72;
-            text-align: justify;
-            max-width: 650px;
-            margin: 0 auto;
+
+        /* --- 標籤雲設計 --- */
+        .tag-box { 
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .tag { 
+            background-color: var(--tag-bg); 
+            color: var(--accent-dark);    
+            padding: 5px 18px; 
+            border-radius: 50px; 
+            font-size: 0.85em; 
+            border: 1px solid #b3e5fc; 
+            font-weight: 600; 
+            transition: 0.3s ease;
+        }
+        .tag:hover {
+            background-color: var(--accent-main);
+            color: #ffffff;
+            transform: scale(1.05);
         }
 
-        /* 標籤雲 */
-        .skills-grid {
+        /* --- 聯絡方式底部 --- */
+        footer {
+            padding: 50px 60px;
+            border-top: 1px solid var(--border-color);
+            background-color: #f8fbfe;
+        }
+        .contact-row {
             display: flex;
             justify-content: center;
+            gap: 40px;
             flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 15px;
-        }
-        .skill-tag {
-            background: #ffffff;
-            color: #0984e3;
-            border: 1px solid #74b9ff;
-            padding: 6px 20px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            cursor: default;
-        }
-        .skill-tag:hover {
-            background: #74b9ff;
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(116, 185, 255, 0.4);
-        }
-
-        /* 聯絡資訊 */
-        footer {
-            margin: 20px 50px 0;
-            padding: 30px;
-            background: #f1f2f6;
-            border-radius: 20px;
         }
         .contact-item {
-            display: inline-block;
-            margin: 0 15px;
-            font-weight: 500;
-            color: #2d3436;
+            color: var(--text-main);
+            font-size: 1em;
+            display: flex;
+            align-items: center;
+        }
+        .contact-item i {
+            margin-right: 12px;
+            color: var(--accent-main);
+            font-size: 1.2em;
         }
 
-        strong { color: #000; }
-
         /* 手機版適應 */
-        @media (max-width: 600px) {
-            section { padding: 0 20px; }
-            h1 { font-size: 2.2rem; }
-            footer { margin: 20px 20px 0; }
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2em; }
+            main { flex-direction: column; padding: 20px; }
+            .sidebar-left { width: 100%; border-right: none; border-bottom: 1px solid var(--border-color); padding-right: 0; padding-bottom: 20px; }
+            h2 { justify-content: flex-start; text-align: left; }
+            .details-right { padding-left: 0; padding-top: 30px; }
+            .contact-row { flex-direction: column; gap: 20px; align-items: center; }
         }
     </style>
 </head>
 <body>
 
-    <div class="wrapper">
-        <div class="top-bar"></div>
-        
+    <div class="resume-paper">
         <header>
             <h1>林旻燕</h1>
-            <p class="subtitle">Smart Automation Engineering Student</p>
+            <p class="subtitle">勤益科技大學 - 智慧自動化工程系學會</p>
         </header>
 
-        <section>
-            <h2>Education</h2>
-            <p class="info-text">目前就讀 <strong>國立勤益科技大學</strong><br>智慧自動化工程系</p>
-        </section>
+        <main>
+            <div class="sidebar-left">
+                <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                <h2><i class="fas fa-microchip"></i> Project</h2>
+                <h2><i class="fas fa-id-card"></i> Certifications</h2>
+                <h2><i class="fas fa-tools"></i> Skills</h2>
+                <h2><i class="fas fa-language"></i> Languages</h2>
+                <h2><i class="fas fa-heart"></i> Interests</h2>
+            </div>
 
-        <section>
-            <h2>Project</h2>
-            <div class="project-card">
-                <div class="project-name">智慧分身自走車</div>
-                <p style="color: #b2bec3; margin-bottom: 10px;">2025.09 — Present</p>
-                <p class="project-detail">
-                    致力於研發具備遠端通訊功能之自走車，整合影像識別與多重感測器開發自動避障系統。我們的目標是讓下肢行動不便者能以直覺、輕鬆的方式操控車輛，實現即時遠端互動。
-                </p>
-                <div class="skills-grid">
-                    <span class="skill-tag">感測器整合</span>
-                    <span class="skill-tag">自走車開發</span>
-                    <span class="skill-tag">Arduino</span>
-                    <span class="skill-tag">Python</span>
+            <div class="details-right">
+                <div class="section-content">
+                    <div class="info-block highlight-text">國立勤益科技大學</div>
+                    <div class="info-block">智慧自動化工程系 - 目前就讀</div>
+                </div>
+
+                <div class="section-content">
+                    <div class="project-card">
+                        <div class="project-title">智慧分身自走車 <span class="project-time">2025.09 ~ 現今</span></div>
+                        <p class="project-desc">
+                            研發具備遠端通訊功能之自走車，整合影像識別與感測器開發自動避障功能。旨在提供下肢行動不便者更直覺的操作方式，實現即時遠端互動。
+                        </p>
+                        <div class="tag-box">
+                            <span class="tag">感測器整合</span>
+                            <span class="tag">自走車開發</span>
+                            <span class="tag">Arduino</span>
+                            <span class="tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-content">
+                    <div class="info-block">電腦軟體應用 - 乙級</div>
+                    <div class="info-block">Certified SolidWorks Professional (CSWP)</div>
+                </div>
+
+                <div class="section-content">
+                    <div class="tag-box">
+                        <span class="tag">Python</span>
+                        <span class="tag">機器學習</span>
+                        <span class="tag">SolidWorks</span>
+                        <span class="tag">Arduino</span>
+                    </div>
+                </div>
+
+                <div class="section-content info-block highlight-text">
+                    TOEIC 690, CESPT 226
+                </div>
+
+                <div class="section-content">
+                    騎車、彈吉他、閱讀、程式設計
                 </div>
             </div>
-        </section>
-
-        <section>
-            <h2>Skills & Certs</h2>
-            <div class="info-text" style="margin-bottom: 20px;">
-                電腦軟體應用 - 乙級<br>
-                Certified SolidWorks Professional (CSWP)
-            </div>
-            <div class="skills-grid">
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">機器學習</span>
-                <span class="skill-tag">SolidWorks</span>
-                <span class="skill-tag">Arduino</span>
-            </div>
-        </section>
-
-        <section>
-            <h2>Language</h2>
-            <p class="info-text">English — TOEIC 690 / CESPT 226</p>
-        </section>
+        </main>
 
         <footer>
-            <div class="contact-item">📧 asf12355555@gmail.com</div>
-            <div class="contact-item">📱 0910-890773</div>
+            <div class="contact-row">
+                <div class="contact-item"><i class="fas fa-envelope"></i> asf12355555@gmail.com</div>
+                <div class="contact-item"><i class="fas fa-phone"></i> 0910-890773</div>
+            </div>
         </footer>
     </div>
 
