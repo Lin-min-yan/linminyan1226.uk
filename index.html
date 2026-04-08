@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>林旻燕 | 伶俐底線專業履歷</title>
+    <title>林旻燕 | 伶俐冷色調專業履歷</title>
     <style>
-        /* 1. 全域色彩：強化冷色調對比與精神 */
+        /* 延續質感冷色調系統 */
         :root {
             --very-peri: #5A609A;    /* 長春花藍 - 核心主色 */
             --orchid-bloom: #A78AB9; /* 蘭花紫 - 裝飾線色 */
-            --sugar-sky: #A6C8DC;    /* 淨空藍/砂糖藍 - 淺色標籤 */
+            --sugar-sky: #A6C8DC;    /* 砂糖藍 - 淺色標籤 */
             --slate-gray: #718096;   /* 藍灰色 - 次要文字 */
             --pure-black: #1A1A1A;   /* 碳黑色 - 關鍵標題 */
             --pure-white: #FFFFFF;
@@ -30,11 +30,12 @@
             background-color: #ffffff;
             padding: 50px 60px;
             border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(90, 96, 154, 0.08); 
+            box-shadow: 0 5px 25px rgba(90, 96, 154, 0.08); 
             border: 1px solid #E1E4E8;
             position: relative;
         }
 
+        /* 頂部裝飾條 */
         .resume-container::before {
             content: "";
             position: absolute;
@@ -54,20 +55,16 @@
             font-weight: 900;
         }
         
-        /* === [更改學歷方形標籤] 選項一：伶俐底線設計 === */
+        /* 改為無色塊、精緻底線標題 */
         h2 { 
             font-size: 1.4em; 
             display: inline-block;
-            /* 去除實心色塊與內縮 */
             background-color: transparent; 
             padding: 0 0 8px 0; 
-            border-radius: 0;
             margin-top: 40px; 
             margin-bottom: 25px; 
             letter-spacing: 5px;
-            /* 文字改為主色 (長春花藍) */
             color: var(--very-peri); 
-            /* 添加 Orchid Bloom (蘭花紫) 精緻底線 */
             border-bottom: 3px solid var(--orchid-bloom); 
             font-weight: 800;
         }
@@ -92,6 +89,7 @@
             text-align: justify;
         }
         
+        /* 標籤配色：延續冷色調，不使用深紫 */
         .tag-box { 
             margin-top: 20px; 
             display: flex;
@@ -103,19 +101,18 @@
         .tag { 
             padding: 6px 20px; 
             border-radius: 50px; 
-            font-size: 0.95em; 
-            font-weight: 800;
+            font-size: 0.9em; 
+            font-weight: 700;
             transition: 0.3s;
         }
 
-        .tag-peri  { background-color: var(--very-peri); color: #FFFFFF; }
-        .tag-orchid { background-color: var(--orchid-bloom); color: #FFFFFF; }
-        .tag-sugar  { background-color: var(--sugar-sky); color: #FFFFFF; }
-        .tag-slate  { background-color: #f0f2f5; color: var(--slate-gray); }
+        .tag-peri  { background-color: #E8EAF6; color: var(--very-peri); border: 1px solid var(--very-peri); } 
+        .tag-sky   { background-color: #E3F2FD; color: #1976D2; border: 1px solid #BBDEFB; } 
+        .tag-sugar { background-color: #F3E5F5; color: var(--orchid-bloom); border: 1px solid var(--orchid-bloom); }
 
         .tag:hover {
-            transform: scale(1.05);
-            filter: brightness(1.1);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         footer {
@@ -131,7 +128,6 @@
             font-weight: 900; 
             font-size: 1.3em; 
             margin-bottom: 12px; 
-            color: var(--very-peri);
         }
 
         .footer-text { 
@@ -168,8 +164,8 @@
                 <div class="tag-box">
                     <span class="tag tag-peri">感測器整合</span>
                     <span class="tag tag-peri">自走車開發</span>
-                    <span class="tag tag-sugar">Arduino</span>
-                    <span class="tag tag-orchid">Python</span>
+                    <span class="tag tag-sky">Arduino</span>
+                    <span class="tag tag-sugar">Python</span>
                 </div>
             </div>
         </section>
@@ -178,10 +174,10 @@
             <h2>專業技能</h2>
             <div class="content">
                 <div class="tag-box">
-                    <span class="tag tag-orchid">Python</span>
+                    <span class="tag tag-sugar">Python</span>
                     <span class="tag tag-peri">機器學習</span>
-                    <span class="tag tag-sugar">SolidWorks</span>
-                    <span class="tag tag-slate">Arduino</span>
+                    <span class="tag tag-sky">SolidWorks</span>
+                    <span class="tag tag-peri">Arduino</span>
                 </div>
             </div>
         </section>
