@@ -3,143 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>林旻燕 | 個人履歷</title>
+    <title>林旻燕 | 質感個人履歷</title>
     <style>
-        /* 1. 背景改為清爽的淺灰藍色 */
+        /* 1. 整體色調：低飽和度灰藍色背景 */
         body { 
             font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif; 
-            line-height: 2; 
-            color: #333; 
-            max-width: 900px; 
+            line-height: 1.8; 
+            color: #4a4a4a; /* 深灰文字，比純黑柔和 */
+            max-width: 850px; 
             margin: 0 auto; 
-            padding: 60px 20px; 
-            background-color: #f1f4f8; /* 淺灰藍背景 */
-            text-align: center; /* 字體置中 */
+            padding: 50px 20px; 
+            background-color: #f7f8f9; 
+            text-align: center;
         }
 
-        /* 2. 履歷主體卡片：增加繽紛邊框與立體陰影 */
+        /* 2. 履歷卡片：優雅圓角與纖細邊框 */
         .resume-container {
             background-color: #ffffff;
-            padding: 60px 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            border: 2px solid #e9d8fd; /* 淡紫色細邊框 */
+            padding: 50px 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.03); /* 輕微陰影 */
+            border: 1px solid #e9ecef;
             position: relative;
-            overflow: hidden;
         }
         
-        /* 3. 頂部裝飾條 (繽紛漸層) */
+        /* 3. 頂部飾條：莫蘭迪色系裝飾 */
         .resume-container::before {
             content: "";
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 10px;
-            background: linear-gradient(90deg, #3498db 0%, #a29bfe 50%, #feca57 100%);
+            height: 6px;
+            background: linear-gradient(90deg, #94a7ae 0%, #b8c6db 50%, #d6bdc3 100%);
         }
 
-        /* 4. 頂部名字 */
-        header { 
-            margin-bottom: 50px; 
-        }
+        /* 4. 名字設計 */
+        header { margin-bottom: 45px; }
         h1 { 
-            color: #2c3e50; 
+            color: #2f3640; 
             margin: 0; 
-            font-size: 2.8em; 
-            letter-spacing: 10px; 
-            font-weight: 900;
+            font-size: 2.5em; 
+            letter-spacing: 12px; 
+            font-weight: 700;
         }
         
-        /* 5. 漸層大標題設計 */
+        /* 5. 標題設計：沉穩的灰藍色 */
         h2 { 
-            font-size: 1.6em; 
+            font-size: 1.4em; 
             display: inline-block;
-            padding: 5px 25px;
-            margin-top: 40px; 
-            margin-bottom: 25px; 
-            letter-spacing: 3px;
-            font-weight: bold;
-            background: linear-gradient(90deg, #2980b9, #8e44ad);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            border-bottom: 3px solid #8e44ad; /* 底線裝飾 */
+            padding: 0 15px 5px;
+            margin-top: 35px; 
+            margin-bottom: 20px; 
+            letter-spacing: 4px;
+            color: #576574;
+            border-bottom: 2px solid #d1d8e0; /* 簡約底線 */
         }
         
         .content { 
-            margin-bottom: 30px; 
+            margin-bottom: 25px; 
             display: flex;
             flex-direction: column;
-            align-items: center; /* 內容物置中 */
+            align-items: center;
         }
         
-        /* 6. 專題標題：黑色加粗 */
+        /* 6. 專題區塊 */
         .project-title { 
             font-weight: bold; 
-            color: #000000; 
-            font-size: 1.3em; 
-            margin-bottom: 10px;
+            color: #2f3640; 
+            font-size: 1.2em; 
+            margin-bottom: 8px;
         }
 
         .project-desc {
-            max-width: 650px;
+            max-width: 600px;
             margin: 0 auto;
-            color: #555;
-            text-align: justify; /* 文字對齊 */
+            color: #6d6d6d;
+            text-align: justify;
+            font-size: 0.95em;
         }
         
-        /* 7. 繽紛標籤樣式 */
+        /* 7. 莫蘭迪標籤：低飽和度色彩 */
         .tag-box { 
-            margin-top: 25px; 
+            margin-top: 20px; 
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 10px;
         }
         
         .tag { 
-            padding: 5px 20px; 
-            border-radius: 50px; 
-            font-size: 0.95em; 
-            font-weight: bold; 
-            transition: 0.3s;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            padding: 4px 15px; 
+            border-radius: 6px; /* 稍微方正一點點，更具現代感 */
+            font-size: 0.85em; 
+            font-weight: 500; 
+            border: 1px solid transparent;
         }
 
-        /* 不同技術不同顏色 */
-        .tag-blue { background: #e1f5fe; color: #0288d1; border: 1px solid #b3e5fc; }
-        .tag-orange { background: #fff3e0; color: #e65100; border: 1px solid #ffe0b2; }
-        .tag-yellow { background: #fffde7; color: #fbc02d; border: 1px solid #fff9c4; }
+        /* 低飽和度顏色分配 */
+        .tag-blue   { background: #e2e8f0; color: #475569; } /* 灰藍 */
+        .tag-green  { background: #dcfce7; color: #166534; } /* 莫蘭迪綠 */
+        .tag-brown  { background: #fef3c7; color: #92400e; } /* 麥芽色 */
+        .tag-purple { background: #f3e8ff; color: #6b21a8; } /* 灰紫 */
 
-        .tag:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        /* 8. 聯絡方式：深色繽紛區塊 */
+        /* 8. 聯絡方式：質感淺灰藍底色 */
         footer {
-            margin-top: 60px;
-            padding: 40px;
-            background: linear-gradient(135deg, #085078 0%, #85D8CE 100%); /* 深藍綠漸層 */
-            color: #ffffff;
-            border-radius: 15px;
-            border: 1px dashed #ffffff;
+            margin-top: 55px;
+            padding: 30px;
+            background-color: #f8fafc; /* 非常淺的藍灰色 */
+            color: #4a5568;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
         }
         .footer-title { 
             font-weight: bold; 
-            font-size: 1.2em; 
-            margin-bottom: 15px; 
-            color: #fff9c4; /* 黃色標題 */
+            font-size: 1.1em; 
+            margin-bottom: 10px; 
+            color: #2d3748;
             letter-spacing: 2px;
         }
         .footer-text { 
-            font-size: 1.1em;
-            letter-spacing: 0.5px;
-            line-height: 2;
+            font-size: 1em;
+            color: #718096;
         }
 
-        strong { color: #2c3e50; }
-        .footer-text strong { color: #ffffff; }
+        strong { color: #2d3436; }
     </style>
 </head>
 <body>
@@ -160,43 +148,39 @@
             <h2>專題</h2>
             <div class="content">
                 <div class="project-title">智慧分身自走車</div>
-                <div style="color: #95a5a6; font-size: 0.9em; margin-bottom: 12px;">2025.09 ~ 現今</div>
+                <div style="color: #a0aec0; font-size: 0.85em; margin-bottom: 10px;">2025.09 ~ 現今</div>
                 <div class="project-desc">
-                    研發具備遠端通訊功能之自走車，並結合影像及感測器開發自動避障功能，期望讓下肢不便行動的人能夠以輕鬆操作自走車，即時透過自走車進行遠端溝通。
+                    致力於研發具備遠端通訊功能之自走車，整合影像識別與感測器開發自動避障功能。目標在於協助下肢行動不便者能以直覺且輕鬆的方式操控，實現即時遠端互動。
                 </div>
                 <div class="tag-box">
-                    <span class="tag tag-blue">感測器</span>
-                    <span class="tag tag-blue">自走車</span>
-                    <span class="tag tag-orange">Arduino</span>
-                    <span class="tag tag-yellow">Python</span>
+                    <span class="tag tag-blue">感測器整合</span>
+                    <span class="tag tag-blue">自走車開發</span>
+                    <span class="tag tag-green">Arduino</span>
+                    <span class="tag tag-purple">Python</span>
                 </div>
             </div>
         </section>
 
         <section>
-            <h2>專業證照</h2>
+            <h2>專業技能與證照</h2>
             <div class="content">
-                電腦軟體應用 - 乙級<br>
-                Certified SolidWorks Professional (CSWP)
-            </div>
-        </section>
-
-        <section>
-            <h2>專業技能</h2>
-            <div class="content">
+                <div style="margin-bottom: 15px;">
+                    電腦軟體應用 - 乙級<br>
+                    Certified SolidWorks Professional (CSWP)
+                </div>
                 <div class="tag-box">
-                    <span class="tag tag-yellow">Python</span>
+                    <span class="tag tag-purple">Python</span>
                     <span class="tag tag-blue">機器學習</span>
                     <span class="tag tag-blue">SolidWorks</span>
-                    <span class="tag tag-orange">Arduino</span>
+                    <span class="tag tag-brown">Arduino</span>
                 </div>
             </div>
         </section>
 
         <section>
-            <h2>語言能力</h2>
+            <h2>語言與能力</h2>
             <div class="content">
-                英文 (TOEIC 690, CESPT 226)
+                英文 — TOEIC 690 / CESPT 226
             </div>
         </section>
 
