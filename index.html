@@ -3,26 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>林旻燕 | 俐落冷色調專業履歷</title>
+    <title>林旻燕 | 伶俐底線專業履歷</title>
     <style>
         /* 1. 全域色彩：強化冷色調對比與精神 */
         :root {
-            --very-peri: #5A609A;    /* 長春花藍 - 核心主色，加深對比 */
-            --orchid-bloom: #A78AB9; /* 蘭花紫 - 標題塊，彩度更高 */
+            --very-peri: #5A609A;    /* 長春花藍 - 核心主色 */
+            --orchid-bloom: #A78AB9; /* 蘭花紫 - 裝飾線色 */
             --sugar-sky: #A6C8DC;    /* 淨空藍/砂糖藍 - 淺色標籤 */
             --slate-gray: #718096;   /* 藍灰色 - 次要文字 */
-            --pure-black: #1A1A1A;   /* 碳黑色 - 關鍵標題，絕對對比 */
+            --pure-black: #1A1A1A;   /* 碳黑色 - 關鍵標題 */
             --pure-white: #FFFFFF;
         }
 
         body { 
             font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif; 
             line-height: 1.8; 
-            color: #333333; /* 柔和的深灰主文字 */
+            color: #333333; 
             max-width: 850px; 
             margin: 0 auto; 
             padding: 50px 20px; 
-            /* 純白背景確保明亮度 */
             background-color: #FFFFFF; 
             text-align: center;
         }
@@ -31,13 +30,11 @@
             background-color: #ffffff;
             padding: 50px 60px;
             border-radius: 12px;
-            /* 輕微且界線明確的陰影 */
             box-shadow: 0 5px 20px rgba(90, 96, 154, 0.08); 
             border: 1px solid #E1E4E8;
             position: relative;
         }
 
-        /* 頂部細飾條：低彩度漸層 */
         .resume-container::before {
             content: "";
             position: absolute;
@@ -50,24 +47,28 @@
         
         header { margin-bottom: 40px; }
         h1 { 
-            color: var(--pure-black); /* 使用碳黑色確保清晰 */
+            color: var(--pure-black); 
             margin: 0; 
             font-size: 2.8em; 
             letter-spacing: 12px; 
             font-weight: 900;
         }
         
-        /* 區塊標題：高彩度 Orchid Bloom (蘭花紫) 實體塊 */
+        /* === [更改學歷方形標籤] 選項一：伶俐底線設計 === */
         h2 { 
             font-size: 1.4em; 
             display: inline-block;
-            padding: 5px 25px;
+            /* 去除實心色塊與內縮 */
+            background-color: transparent; 
+            padding: 0 0 8px 0; 
+            border-radius: 0;
             margin-top: 40px; 
             margin-bottom: 25px; 
             letter-spacing: 5px;
-            color: var(--pure-white);
-            background-color: var(--very-peri); /* 長春花藍作為標題塊 */
-            border-radius: 5px;
+            /* 文字改為主色 (長春花藍) */
+            color: var(--very-peri); 
+            /* 添加 Orchid Bloom (蘭花紫) 精緻底線 */
+            border-bottom: 3px solid var(--orchid-bloom); 
             font-weight: 800;
         }
         
@@ -77,7 +78,6 @@
             font-weight: 500;
         }
         
-        /* 專題標題：純黑強調 */
         .project-title { 
             font-weight: 900; 
             color: #000000; 
@@ -92,7 +92,6 @@
             text-align: justify;
         }
         
-        /* 標籤設計：色彩鮮明、對比清晰 */
         .tag-box { 
             margin-top: 20px; 
             display: flex;
@@ -109,25 +108,23 @@
             transition: 0.3s;
         }
 
-        /* 根據彩度與功能分配標籤顏色 */
-        .tag-peri  { background-color: var(--very-peri); color: #FFFFFF; } /* 深長春花藍 */
-        .tag-orchid { background-color: var(--orchid-bloom); color: #FFFFFF; } /* 鮮蘭花紫 */
-        .tag-sugar  { background-color: var(--sugar-sky); color: #FFFFFF; }  /* 鮮砂糖藍 */
-        .tag-slate  { background-color: #f0f2f5; color: var(--slate-gray); }  /* 柔和藍灰 */
+        .tag-peri  { background-color: var(--very-peri); color: #FFFFFF; }
+        .tag-orchid { background-color: var(--orchid-bloom); color: #FFFFFF; }
+        .tag-sugar  { background-color: var(--sugar-sky); color: #FFFFFF; }
+        .tag-slate  { background-color: #f0f2f5; color: var(--slate-gray); }
 
         .tag:hover {
             transform: scale(1.05);
             filter: brightness(1.1);
         }
 
-        /* 聯絡資訊：俐落對比區塊 */
         footer {
             margin-top: 60px;
             padding: 40px;
             background-color: #F8F9FB; 
             color: var(--very-peri);
             border-radius: 12px;
-            border: 2px solid #E1E4E8; /* 改為實線邊框 */
+            border: 2px solid #E1E4E8;
         }
 
         .footer-title { 
