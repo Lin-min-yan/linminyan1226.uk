@@ -3,172 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>林旻燕 | 個人履歷</title>
+    <title>林旻燕 | Resume</title>
     <style>
-        /* 1. 背景改為淺灰藍色 */
+        /* 基礎設定 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body { 
-            font-family: "Microsoft JhengHei", Helvetica, sans-serif; 
-            line-height: 1.8; 
-            color: #333; 
-            max-width: 900px; 
-            margin: 0 auto; 
-            padding: 40px 20px; 
-            background-color: #f4f7f9; 
+            font-family: 'Noto Sans TC', sans-serif; 
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 20px;
+            color: #2d3436;
         }
 
-        /* 2. 履歷卡片主體 */
-        .resume-container {
-            background-color: #ffffff;
-            padding: 45px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        }
-        
-        /* 3. 頂部名字 */
-        header { 
-            margin-bottom: 40px; 
-        }
-        h1 { 
-            color: #2c3e50; 
-            margin: 0; 
-            font-size: 2.5em; 
-            letter-spacing: 3px; 
-            font-weight: bold;
-        }
-        
-        /* 4. 側邊粗線條標題 */
-        h2 { 
-            color: #2c3e50; 
-            font-size: 1.4em; 
-            border-left: 6px solid #3498db; 
-            padding-left: 15px; 
-            margin-top: 35px; 
-            margin-bottom: 18px; 
-            background-color: #f8f9fa;
-            padding-top: 8px;
-            padding-bottom: 8px;
-        }
-        
-        .content { 
-            padding-left: 20px; 
-            margin-bottom: 20px; 
-        }
-        
-        /* 5. 專題標題：純黑色 */
-        .project-title { 
-            font-weight: bold; 
-            color: #000000; 
-            font-size: 1.2em; 
-            margin-bottom: 5px;
-        }
-        
-        /* 6. 標籤樣式：改為藍色底 */
-        .tag-box { margin-top: 12px; }
-        .tag { 
-            display: inline-block; 
-            background: #d6eaf8; /* 淺藍色背景 */
-            color: #2471a3;    /* 深藍色文字 */
-            padding: 4px 16px; 
-            border-radius: 20px; 
-            font-size: 0.85em; 
-            margin-right: 8px; 
-            margin-bottom: 8px;
-            border: 1px solid #aed6f1; 
-            font-weight: bold; 
-        }
-
-        /* 7. 聯絡方式：改為淺色底區塊 */
-        footer {
-            margin-top: 50px;
-            padding: 30px;
-            background-color: #eaf2f8; /* 淺鋼鐵藍底色 */
-            color: #2c3e50;
-            border-radius: 12px;
+        /* 履歷容器 */
+        .wrapper {
+            background: rgba(255, 255, 255, 0.95);
+            width: 100%;
+            max-width: 850px;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
             text-align: center;
-            border: 1px solid #d4e6f1;
-        }
-        .footer-title { 
-            font-weight: bold; 
-            font-size: 1.1em; 
-            margin-bottom: 8px; 
-            color: #2980b9; 
-            letter-spacing: 1px;
-        }
-        .footer-text { 
-            font-size: 1em; 
-            line-height: 1.8;
+            padding-bottom: 40px;
         }
 
-        strong { color: #2c3e50; }
+        /* 頂部裝飾條 */
+        .top-bar {
+            height: 10px;
+            background: linear-gradient(to right, #74b9ff, #0984e3);
+        }
+
+        /* 標題區 */
+        header {
+            padding: 60px 20px 40px;
+        }
+        h1 {
+            font-size: 3rem;
+            letter-spacing: 12px;
+            font-weight: 700;
+            color: #0984e3;
+            margin-bottom: 10px;
+            text-indent: 12px; /* 補償字母間距讓文字真正置中 */
+        }
+        .subtitle {
+            color: #636e72;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+        }
+
+        /* 內容區塊 */
+        section {
+            padding: 0 50px;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        h2::after {
+            content: "";
+            display: block;
+            width: 30px;
+            height: 2px;
+            background: #0984e3;
+            margin: 8px auto 0;
+        }
+
+        .info-text {
+            line-height: 2;
+            font-size: 1.1rem;
+        }
+
+        /* 專題區塊 */
+        .project-card {
+            background: #fdfdfd;
+            border: 1px solid #f1f2f6;
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 10px;
+        }
+        .project-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #000000;
+            margin-bottom: 15px;
+        }
+        .project-detail {
+            color: #636e72;
+            text-align: justify;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        /* 標籤雲 */
+        .skills-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 15px;
+        }
+        .skill-tag {
+            background: #ffffff;
+            color: #0984e3;
+            border: 1px solid #74b9ff;
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+        .skill-tag:hover {
+            background: #74b9ff;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(116, 185, 255, 0.4);
+        }
+
+        /* 聯絡資訊 */
+        footer {
+            margin: 20px 50px 0;
+            padding: 30px;
+            background: #f1f2f6;
+            border-radius: 20px;
+        }
+        .contact-item {
+            display: inline-block;
+            margin: 0 15px;
+            font-weight: 500;
+            color: #2d3436;
+        }
+
+        strong { color: #000; }
+
+        /* 手機版適應 */
+        @media (max-width: 600px) {
+            section { padding: 0 20px; }
+            h1 { font-size: 2.2rem; }
+            footer { margin: 20px 20px 0; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="resume-container">
+    <div class="wrapper">
+        <div class="top-bar"></div>
+        
         <header>
             <h1>林旻燕</h1>
+            <p class="subtitle">Smart Automation Engineering Student</p>
         </header>
 
         <section>
-            <h2>學歷</h2>
-            <div class="content">
-                目前就讀 <strong>國立勤益科技大學</strong> - 智慧自動化工程系
-            </div>
+            <h2>Education</h2>
+            <p class="info-text">目前就讀 <strong>國立勤益科技大學</strong><br>智慧自動化工程系</p>
         </section>
 
         <section>
-            <h2>專題</h2>
-            <div class="content">
-                <div class="project-title">智慧分身自走車</div>
-                <div><strong>時間：</strong> 2025.09 ~ 現今</div>
-                <div><strong>內容：</strong> 研發具備遠端通訊功能之自走車，並結合影像及感測器開發自動避障功能，期望讓下肢不便行動的人能夠以輕鬆操作自走車，即時透過自走車進行遠端溝通。</div>
-                <div class="tag-box">
-                    <span class="tag">感測器</span>
-                    <span class="tag">自走車</span>
-                    <span class="tag">Arduino</span>
-                    <span class="tag">Python</span>
+            <h2>Project</h2>
+            <div class="project-card">
+                <div class="project-name">智慧分身自走車</div>
+                <p style="color: #b2bec3; margin-bottom: 10px;">2025.09 — Present</p>
+                <p class="project-detail">
+                    致力於研發具備遠端通訊功能之自走車，整合影像識別與多重感測器開發自動避障系統。我們的目標是讓下肢行動不便者能以直覺、輕鬆的方式操控車輛，實現即時遠端互動。
+                </p>
+                <div class="skills-grid">
+                    <span class="skill-tag">感測器整合</span>
+                    <span class="skill-tag">自走車開發</span>
+                    <span class="skill-tag">Arduino</span>
+                    <span class="skill-tag">Python</span>
                 </div>
             </div>
         </section>
 
         <section>
-            <h2>專業證照</h2>
-            <div class="content">
+            <h2>Skills & Certs</h2>
+            <div class="info-text" style="margin-bottom: 20px;">
                 電腦軟體應用 - 乙級<br>
                 Certified SolidWorks Professional (CSWP)
             </div>
-        </section>
-
-        <section>
-            <h2>專業技能</h2>
-            <div class="content">
-                <span class="tag">Python</span>
-                <span class="tag">機器學習</span>
-                <span class="tag">SolidWorks</span>
-                <span class="tag">Arduino</span>
+            <div class="skills-grid">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">機器學習</span>
+                <span class="skill-tag">SolidWorks</span>
+                <span class="skill-tag">Arduino</span>
             </div>
         </section>
 
         <section>
-            <h2>語言能力</h2>
-            <div class="content">
-                英文 (TOEIC 690, CESPT 226)
-            </div>
-        </section>
-
-        <section>
-            <h2>個人興趣</h2>
-            <div class="content">
-                騎車、彈吉他、閱讀、程式設計
-            </div>
+            <h2>Language</h2>
+            <p class="info-text">English — TOEIC 690 / CESPT 226</p>
         </section>
 
         <footer>
-            <div class="footer-title">聯絡方式</div>
-            <div class="footer-text">
-                Email: asf12355555@gmail.com <br>
-                電話: 0910-890773
-            </div>
+            <div class="contact-item">📧 asf12355555@gmail.com</div>
+            <div class="contact-item">📱 0910-890773</div>
         </footer>
     </div>
 
